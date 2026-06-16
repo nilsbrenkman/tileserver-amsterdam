@@ -1,0 +1,15 @@
+{
+  "options": {
+    "paths": {
+      "root": "/data",
+      "fonts": "fonts",
+      "styles": "styles"
+    }
+  },
+  "styles": {
+    "amsterdam": { "style": "amsterdam.json" }
+  },
+  "data": {
+    "amsterdam": { "pmtiles": "amsterdam.pmtiles" }
+  }
+}

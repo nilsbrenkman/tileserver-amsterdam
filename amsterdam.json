@@ -1,0 +1,125 @@
+{
+  "version": 8,
+  "name": "Amsterdam",
+  "glyphs": "https://parkeerassistent.nl/tiles/fonts/{fontstack}/{range}.pbf",
+  "sources": {
+    "protomaps": {
+      "type": "vector",
+      "url": "https://parkeerassistent.nl/tiles/data/amsterdam.json"
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": { "background-color": "#f3f2ee" }
+    },
+    {
+      "id": "earth",
+      "type": "fill",
+      "source": "protomaps",
+      "source-layer": "earth",
+      "paint": { "fill-color": "#e8e7df" }
+    },
+    {
+      "id": "landuse_green",
+      "type": "fill",
+      "source": "protomaps",
+      "source-layer": "landuse",
+      "filter": ["in", "kind", "park", "garden", "grass", "meadow", "wood", "forest", "scrub", "recreation_ground", "cemetery", "pitch", "golf_course", "nature_reserve", "farmland"],
+      "paint": { "fill-color": "#d6e6c3" }
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "protomaps",
+      "source-layer": "water",
+      "paint": { "fill-color": "#a4c8e8" }
+    },
+    {
+      "id": "buildings",
+      "type": "fill",
+      "source": "protomaps",
+      "source-layer": "buildings",
+      "minzoom": 13,
+      "paint": { "fill-color": "#e3ddcd", "fill-outline-color": "#d4ccb8" }
+    },
+    {
+      "id": "roads_minor",
+      "type": "line",
+      "source": "protomaps",
+      "source-layer": "roads",
+      "filter": ["in", "kind", "minor_road", "other", "path"],
+      "paint": {
+        "line-color": "#ffffff",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 12, 0.5, 16, 3]
+      }
+    },
+    {
+      "id": "roads_medium",
+      "type": "line",
+      "source": "protomaps",
+      "source-layer": "roads",
+      "filter": ["==", "kind", "medium_road"],
+      "paint": {
+        "line-color": "#ffffff",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 0.8, 16, 5]
+      }
+    },
+    {
+      "id": "roads_major",
+      "type": "line",
+      "source": "protomaps",
+      "source-layer": "roads",
+      "filter": ["in", "kind", "major_road", "highway"],
+      "paint": {
+        "line-color": "#fbd9a0",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 9, 1, 16, 7]
+      }
+    },
+    {
+      "id": "rail",
+      "type": "line",
+      "source": "protomaps",
+      "source-layer": "roads",
+      "filter": ["==", "kind", "rail"],
+      "minzoom": 12,
+      "paint": { "line-color": "#c4c1bb", "line-width": 1, "line-dasharray": [3, 2] }
+    },
+    {
+      "id": "boundaries",
+      "type": "line",
+      "source": "protomaps",
+      "source-layer": "boundaries",
+      "paint": { "line-color": "#a0a0a8", "line-width": 1, "line-dasharray": [2, 2] }
+    },
+    {
+      "id": "roads_labels",
+      "type": "symbol",
+      "source": "protomaps",
+      "source-layer": "roads",
+      "filter": ["has", "name"],
+      "minzoom": 14,
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": ["get", "name"],
+        "text-font": ["Noto Sans Regular"],
+        "text-size": 10
+      },
+      "paint": { "text-color": "#55524a", "text-halo-color": "#ffffff", "text-halo-width": 1.5 }
+    },
+    {
+      "id": "places_labels",
+      "type": "symbol",
+      "source": "protomaps",
+      "source-layer": "places",
+      "layout": {
+        "text-field": ["get", "name"],
+        "text-font": ["Noto Sans Regular"],
+        "text-size": ["interpolate", ["linear"], ["zoom"], 8, 11, 14, 18],
+        "text-max-width": 8
+      },
+      "paint": { "text-color": "#3a3a3a", "text-halo-color": "#ffffff", "text-halo-width": 1.5 }
+    }
+  ]
+}
