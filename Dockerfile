@@ -22,4 +22,4 @@ COPY --chown=node:node config.json /data/config.json
 COPY --chown=node:node styles /data/styles
 COPY --chown=node:node fonts /data/fonts
 EXPOSE 8080
-CMD ["-p", "8080", "-c", "/data/config.json"]
+CMD ["--public_url", "https://parkeerassistent.nl/tiles/", "-p", "8080", "-c", "/data/config.json"]

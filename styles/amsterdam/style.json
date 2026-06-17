@@ -6,7 +6,7 @@
   "sources": {
     "protomaps": {
       "type": "vector",
-      "url": "https://tileserver.tileserver.orb.local/data/amsterdam.json"
+      "url": "https://parkeerassistent.nl/tiles/data/amsterdam.json"
     }
   },
   "layers": [
