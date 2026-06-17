@@ -3,13 +3,22 @@
     "paths": {
       "root": "/data",
       "fonts": "fonts",
-      "styles": "styles"
+      "styles": "styles",
+      "pmtiles": "data"
     }
   },
   "styles": {
-    "amsterdam": { "style": "amsterdam/style.json" }
+    "amsterdam": {
+      "style": "amsterdam/style.json",
+      "tilejson": {
+        "type": "overlay",
+        "bounds": [4.693909,52.247983,5.090790,52.452662]
+      }
+    }
   },
   "data": {
-    "amsterdam": { "pmtiles": "amsterdam.pmtiles" }
+    "amsterdam": {
+      "pmtiles": "amsterdam.pmtiles"
+    }
   }
 }

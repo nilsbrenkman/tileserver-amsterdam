@@ -16,10 +16,10 @@ RUN ["/go-pmtiles", "extract", \
 # the image's bundled glyph fonts into the data root so labels render. --public_url makes the
 # emitted style/tilejson/font URLs absolute under /tiles/ so they route back through the ingress
 # (which strips the prefix). Style is served at /tiles/styles/amsterdam/style.json.
-FROM maptiler/tileserver-gl:v5.6.0
-COPY --from=data --chown=node:node /amsterdam.pmtiles /data/amsterdam.pmtiles
+FROM maptiler/tileserver-gl-light:v5.6.0
+COPY --from=data --chown=node:node /amsterdam.pmtiles /data/data/amsterdam.pmtiles
 COPY --chown=node:node config.json /data/config.json
 COPY --chown=node:node styles /data/styles
 COPY --chown=node:node fonts /data/fonts
 EXPOSE 8080
-CMD ["--public_url", "https://parkeerassistent.nl/tiles/", "-p", "8080", "-c", "/data/config.json"]
+CMD ["-c", "/data/config.json"]
