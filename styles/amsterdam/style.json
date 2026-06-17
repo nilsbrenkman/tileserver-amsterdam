@@ -1,12 +1,12 @@
 {
   "version": 8,
   "name": "Amsterdam",
-  "glyphs": "https://protomaps.github.io/basemaps-assets/fonts/{fontstack}/{range}.pbf",
-  "sprite": "https://protomaps.github.io/basemaps-assets/sprites/v4/light",
-   "sources": {
+  "sprite": "{styleJsonFolder}/sprite",
+  "glyphs": "{fontstack}/{range}.pbf",
+  "sources": {
     "protomaps": {
       "type": "vector",
-      "url": "https://parkeerassistent.nl/tiles/data/amsterdam.json"
+      "url": "https://tileserver.tileserver.orb.local/data/amsterdam.json"
     }
   },
   "layers": [

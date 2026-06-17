@@ -7,7 +7,7 @@
     }
   },
   "styles": {
-    "amsterdam": { "style": "amsterdam.json" }
+    "amsterdam": { "style": "amsterdam/style.json" }
   },
   "data": {
     "amsterdam": { "pmtiles": "amsterdam.pmtiles" }
