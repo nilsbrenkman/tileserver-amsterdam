@@ -1,8 +1,8 @@
 {
   "version": 8,
   "name": "Amsterdam",
-  "sprite": "https://parkeerassistent.nl/tiles/{styleJsonFolder}/sprite",
-  "glyphs": "https://parkeerassistent.nl/tiles/{fontstack}/{range}.pbf",
+  "sprite": "https://parkeerassistent.nl/tiles/styles/amsterdam/sprite",
+  "glyphs": "https://parkeerassistent.nl/tiles/fonts/{fontstack}/{range}.pbf",
   "sources": {
     "protomaps": {
       "type": "vector",
